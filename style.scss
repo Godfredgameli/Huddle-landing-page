@@ -1,0 +1,187 @@
+/*Primary colors*/
+$violet: hsl(257, 40%, 49%);
+$magenta: hsl(300, 69%, 71%);
+
+/*Typography*/
+$font-normal: 400;
+$font-bold: 600;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+$headings-font: Poppins;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+$body-font: "Open Sans";
+
+
+
+body, html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: $violet;
+    font-family: $body-font;
+    color: white;
+    font-weight: $font-normal;
+}
+*{
+    box-sizing: border-box;
+}
+
+.main-wrapper{
+    background-image: url(images/bg-desktop.svg);
+    background-size:contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 97vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content-wrapper{
+        width: 95%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        .logo-wrapper{
+            height: 15%;
+            
+            img{
+                cursor: pointer;
+                width: 200px;
+                height: 90px;
+                margin: 0;
+            }
+        }
+        .content{
+            height: 75%;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+
+            .image-wrapper{
+                width: 60%;
+                padding: 0;
+
+                img{
+                    max-height: 100%;
+                    max-height: 100%;
+                    cursor: pointer;
+                }
+                
+            }
+            .message-wrapper{
+                width: 40%;
+                
+                h1{
+                    font-weight: $font-bold;
+                    font-family: $headings-font;
+                    font-size: 40px;
+                }
+                p{
+                    font-weight: $font-normal;
+                    font-family: $body-font;
+                }
+                button{
+                    border: none;
+                    border-radius: 50px;
+                    padding:15px 70px;
+                    color: $violet;
+                    cursor: pointer;
+
+                    &:focus, &:hover{
+                        color: white;
+                        background-color: $magenta;
+                    }
+
+                }
+            }
+        }
+        .icon-wrapper{
+            height: 10%;
+            text-align: right;
+            padding-top: 1%;
+            
+            .social-icon{
+                color: #fff;
+                border: solid #fff 1px;
+                padding: 5px 2.5px 0;
+                border-radius: 50%;
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                text-align: center;
+
+                &:not(:last-child){
+                    margin-right: 5px;
+                }
+
+                &:focus, &:hover{
+                    border: $magenta;
+                    color: $magenta;
+                }
+            }
+            .fab{
+                text-align: center;
+                font-size: 24px;   
+            }
+        }
+    }
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin: 0;
+}
+.attribution a { 
+    color: hsl(138, 100%, 40%); 
+}
+
+@media screen and (max-width:1100px){
+    .main-wrapper{
+        height: 100%;
+        width: 100%;
+        background-size: 100%;
+        background-position: top;
+
+        .content-wrapper{
+            width: 90%;
+            .logo-wrapper{
+                margin: 30px 0;
+                
+            }
+            .content{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: stretch;
+                
+                margin-bottom: 50px;
+                
+                .image-wrapper{
+                    width: 100%;
+                    
+                    img{
+                        width: 90%;
+                    }
+                }
+                .message-wrapper{
+                    width: 100%;
+                    text-align: center;
+
+                    h1{
+                        font-size: 28px;
+                    }
+                }
+            }
+            .icon-wrapper{
+                width: 100%;
+                margin-bottom: 30px;
+                text-align: center;
+                padding-right: 50px;
+
+                
+            }
+        }
+    }
+}
